@@ -7,4 +7,10 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="Http\" />
+    <Folder Include="Network\" />
+    <Folder Include="Parser\" />
+  </ItemGroup>
+
 </Project>
