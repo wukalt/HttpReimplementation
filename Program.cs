@@ -1,7 +1,12 @@
 ﻿using HttpReimplementation.Http;
+using HttpClient = HttpReimplementation.Http.HttpClient;
 
-HttpRequest req = new(HttpReimplementation.Http.HttpMethod.GET, "/", HttpVersion.Http11);
-req.AddHeader("Host", "wuka.com");
+var request = new HttpRequest(HttpReimplementation.Http.HttpMethod.GET,
+    "/",
+    HttpVersion.Http11);
 
-string build = req.Build();
-Console.WriteLine(build);
+request.AddHeader("Host", "example.com");
+
+var client = new HttpClient();
+string response = await client.SendAsync(request);
+Console.WriteLine(response);
